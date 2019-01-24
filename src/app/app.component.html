@@ -1,3 +1,18 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+    <ion-menu contentId="content1" side="start">
+        <ion-header>
+            <ion-toolbar >
+                <img src="http://primekidz.com/content/images/logo-wide-prime-5.png" />
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+            <ion-list>
+                <ion-item (click)="Navigate('/login')"><ion-label color="primary">Login</ion-label></ion-item>
+                <ion-item (click)="Navigate('/kids')"><ion-label color="secondary">Kids</ion-label></ion-item>
+                <ion-item (click)="Navigate('/daily-report')"><ion-label color="tertiary">Daily Report</ion-label></ion-item>
+                <ion-item (click)="Navigate('/contact-us')"><ion-label >Contact Us</ion-label></ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="content1" main></ion-router-outlet>
 </ion-app>

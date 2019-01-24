@@ -1,5 +1,7 @@
 {
   "name": "prime-kids",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

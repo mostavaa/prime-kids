@@ -1,0 +1,95 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title color="primary">Daily kids activities</ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button color="primary" autoHide="false"></ion-menu-button>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>
+<ion-content padding>
+    <ion-list>
+        <ion-item text-center>
+            <ion-label>
+                <p>You can change date or kid from side menu.</p>
+            </ion-label>
+
+        </ion-item>
+        <ion-item>
+            <ion-icon color="secondary" name="calendar"></ion-icon>
+            <ion-label color="primary"> Day of activities</ion-label>
+            <ion-datetime [(ngModel)]="date" display-format="DD/MM/YYYY"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-icon color="secondary" name="person"></ion-icon>
+            <ion-label color="primary"> Kid Name</ion-label>
+            <ion-select interface="action-sheet">
+                <ion-select-option value="kid1">kid1</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <ion-card>
+        <ion-card-header>
+            <!--<ion-icon color="primary" name="calendar"></ion-icon>
+            <ion-label color="primary">{{date}}</ion-label>
+            <ion-icon name="person" color="secondary"></ion-icon>
+            <ion-label color="secondary">Kid1</ion-label>-->
+            <ion-label color="tertiary">Health care activities</ion-label>
+        </ion-card-header>
+        <ion-list lines="none">
+            <ion-item>
+                <ion-avatar slot="start">
+                    <img src="http://primekidz.com/Content/images/activities/diaper.jpg" />
+                </ion-avatar>
+                <ion-label>
+                    <h3>only one item selected</h3>
+                    <p>
+                        <ion-button>1</ion-button>
+                        <ion-button color="light">2</ion-button>
+                        <ion-button color="light">3</ion-button>
+                        <ion-button color="light">4</ion-button>
+                    </p>
+                </ion-label>
+            </ion-item>
+            <ion-item>
+                <ion-avatar slot="start">
+                    <img src="http://primekidz.com/Content/images/activities/temperature.png" />
+                </ion-avatar>
+                <ion-label>
+                    <h3>all the items selected</h3>
+                    <p>
+                        <ion-button>1</ion-button>
+                        <ion-button>2</ion-button>
+                        <ion-button>3</ion-button>
+                    </p>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+    <ion-card>
+        <ion-card-header >
+            <ion-label color="tertiary">Absent</ion-label>
+        </ion-card-header>
+        <ion-list lines="none">
+            <ion-item text-center >
+                <h1 color="primary">
+                    This child is absent in this day
+                </h1>
+            </ion-item>
+            <ion-item text-center  >
+                <h2 color="primary">
+                    The nursery administration wishes him health and wellness.
+                </h2>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+    <ion-card>
+        <ion-list lines="none">
+            <ion-item text-center>
+                <h1 color="primary">
+                    No activities available for this day.
+                </h1>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+</ion-content>
