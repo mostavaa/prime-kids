@@ -19,22 +19,25 @@
             </ion-label>
 
         </ion-item>
+        <form [formGroup]="form">
         <ion-item>
             <ion-icon color="secondary" name="calendar"></ion-icon>
             <ion-label color="primary">
                 <span appTranslator word="dayOfActivity"></span>
             </ion-label>
-            <ion-datetime [(ngModel)]="date" display-format="DD/MM/YYYY"></ion-datetime>
+            <ion-datetime formControlName="date" (ionChange)="searchActivities()"  [cancelText]="cancelText" [doneText]="okText" display-format="DD/MM/YYYY"></ion-datetime>
         </ion-item>
         <ion-item>
             <ion-icon color="secondary" name="person"></ion-icon>
             <ion-label color="primary">
                 <span appTranslator word="kidName"></span>
             </ion-label>
-            <ion-select interface="action-sheet" [okText]="okText" [cancelText]="cancelText">
+            <ion-select formControlName="kid" (ionChange)="searchActivities()" interface="action-sheet" [okText]="okText" [cancelText]="cancelText">
                 <ion-select-option value="kid1">kid1</ion-select-option>
+                <ion-select-option [value]="kid.id" [selected]="kid.id == selectedId" *ngFor="let kid of kids">{{kid.name}}</ion-select-option>
             </ion-select>
         </ion-item>
+        </form>
     </ion-list>
     <ion-card>
         <ion-card-header>

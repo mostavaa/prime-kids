@@ -18,27 +18,27 @@
 
     </ion-row>
 
-    <form #f (ngSubmit)="changePassowrd(f)">
+    <form [formGroup]="form" (ngSubmit)="changePassowrd()">
         <ion-list>
             <ion-item>
                 <ion-label float>
                     <span appTranslator word="oldPassword"></span>
                 </ion-label>
-                <ion-input type="password" required name="oldPassowrd" ngModel></ion-input>
+                <ion-input type="password" formControlName="oldPassword" ></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label float>
                     <span appTranslator word="newPassword"></span>
                 </ion-label>
-                <ion-input type="password" required name="newPassword" ngModel></ion-input>
+                <ion-input type="password"  formControlName="newPassword" ></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label float>
                     <span appTranslator word="confirmPassword"></span>
                 </ion-label>
-                <ion-input type="password" required name="confirmPassword" ngModel></ion-input>
+                <ion-input type="password"  formControlName="confirmPassword" ></ion-input>
             </ion-item>
-            <ion-button expand="full" [disabled]="!f.valid">
+            <ion-button expand="full" [disabled]="!form.valid">
                 <span appTranslator word="changePassword"></span>
             </ion-button>
 

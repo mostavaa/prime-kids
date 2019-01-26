@@ -5,6 +5,8 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { LoadingService } from './services/loading.service';
 import { LanguageService } from './services/language.service';
+import { AuthService } from './services/auth.service';
+
 
 @Component({
     selector: 'app-root',
@@ -19,7 +21,8 @@ export class AppComponent implements OnInit {
         private navCtrl: NavController,
         private menueCtrl: MenuController,
         private loadingService: LoadingService,
-        private languageService: LanguageService
+        private languageService: LanguageService,
+        private authService: AuthService
     ) {
         this.initializeApp();
     }
@@ -33,16 +36,25 @@ export class AppComponent implements OnInit {
         });
     }
     Navigate(route: string) {
-        this.navCtrl.navigateForward(route);
+        this.navCtrl.navigateRoot(route);
         this.menueCtrl.close();
     }
     logout() {
-        this.loadingService.showLoading()
-        setTimeout(() => this.loadingService.hideLoading(), 5000)
+        this.authService.logout();
+        location.reload();
     }
     switchLanguage() {
         this.languageService.switchLanguage();
         this.menueCtrl.close();
         location.reload();
+    }
+    showLoader() {
+        this.loadingService.showLoading();
+        setTimeout(() => this.loadingService.hideLoading(), 5000);
+    }
+    isLogged() {
+
+        let logged = this.authService.isLogged()
+        return logged;
     }
 }

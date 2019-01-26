@@ -10,21 +10,21 @@
     </ion-toolbar>
 </ion-header>
 <ion-content padding>
-    <form #f (ngSubmit)="login(f)">
+    <form [formGroup]="form" (ngSubmit)="login()">
         <ion-list>
             <ion-item>
                 <ion-label float>
                     <span appTranslator word="username"></span>
                 </ion-label>
-                <ion-input type="text" required name="username" ngModel></ion-input>
+                <ion-input formControlName="username" type="text"></ion-input>
             </ion-item>
             <ion-item>
                 <ion-label float>
                     <span appTranslator word="password"></span>
                 </ion-label>
-                <ion-input type="password" required name="password" ngModel></ion-input>
+                <ion-input formControlName="password" type="password"></ion-input>
             </ion-item>
-            <ion-button expand="full" [disabled]="!f.valid">
+            <ion-button expand="full" type="submit" [disabled]="!form.valid" >
                 <span appTranslator word="login"></span>
             </ion-button>
 

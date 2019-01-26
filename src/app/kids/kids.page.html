@@ -10,7 +10,7 @@
     </ion-toolbar>
 </ion-header>
 <ion-content padding>
-    <ion-card padding>
+    <ion-card padding *ngFor="let kid of kids">
         <img src="../../assets/imgs/1.png" />
         <ion-card-content>
             <ion-card-title color="tertiary">
@@ -22,10 +22,10 @@
                         <img src="../../assets/imgs/1.png" />
                     </ion-avatar>
                     <ion-label color="primary">
-                        Kid1
+                        {{kid.name}}
                     </ion-label>
                 </ion-item>
-                <ion-button color="secondary" expand="full">
+                <ion-button (click)="navigateToDailyReport(kid)" color="secondary" expand="full">
                     <ion-icon name="home" icon-left></ion-icon>
                     <span appTranslator word="dailyReport"></span>
                 </ion-button>

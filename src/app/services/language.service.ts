@@ -27,8 +27,6 @@ export class LanguageService {
             childAbsent: 'هذا الطفل غائب في هذا اليوم.',
             wishesHealth: 'ادارة الحضانة تتمني له الصحة والعافية.',
             noActivities: 'لا يوجد أنشطة متاحه لهذا اليوم.',
-            ok: 'موافق',
-            cancel: 'الغاء',
             about: 'من نحن',
             aboutUsTxt: 'مجموعة من المطورين المحترفين في مجال البرمجيات نقدم لكم بعض الحلول الجديدة في مجال الحضانات.',
             aboutUsProgram: 'نقدم في هذا البرنامج العديد من الحلول لمشكلة متابعة انشطة الاطفال اليومية بطريقة سهلة وبسيطة حيث توفر علي الحضانة الجهد والمال وتزود اولياء الاموار بكافة التفاصيل عن اولادهم بشكل يومي.',
@@ -39,7 +37,10 @@ export class LanguageService {
             mobileAppUsage: 'يستخدمه الآباء لمتابعة أطفالهم.',
             en: 'English',
             ar: 'عربي',
-
+            error: 'حدث خطأ في الخادم , برجاء المحاولة لاحقا',
+            ok: 'موافق',
+            cancel: 'الغاء',
+            confirmPasswordNotMatch: 'الكلمة السرية غير مطابقة',
         },
         en: {
             kids: 'Kids',
@@ -66,8 +67,6 @@ export class LanguageService {
             childAbsent: 'This child is absent in this day',
             wishesHealth: 'The nursery administration wishes him health and wellness.',
             noActivities: 'No activities available for this day.',
-            ok: 'Ok',
-            cancel: 'Cancel',
             about: 'About us',
             aboutUsTxt: 'We are a group of professional software developers offer you some new solutions in the field of nurseries.',
             aboutUsProgram: 'In this program we offer many solutions to the problem of follow-up activities of children daily in a simple and simple way, providing the nursery effort and money and provide parents of the Amwar all the details about their children on a daily basis.',
@@ -78,6 +77,10 @@ export class LanguageService {
             mobileAppUsage: 'Used by parents to follow up his kids.',
             en: 'English',
             ar: 'عربي',
+            error: 'Server Error , Please Try Again Later',
+            ok: 'Ok',
+            cancel: 'Cancel',
+            confirmPasswordNotMatch: 'Passwords Arn\'t Identical',
 
         }
     };
