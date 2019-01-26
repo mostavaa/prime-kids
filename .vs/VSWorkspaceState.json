@@ -3,11 +3,8 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\daily-report",
-    "\\src\\app\\kids",
-    "\\src\\app\\models",
-    "\\src\\app\\services"
+    "\\src\\app\\daily-report"
   ],
-  "SelectedNode": "\\src\\app\\shared.module.ts",
+  "SelectedNode": "\\src\\app\\daily-report\\daily-report.page.html",
   "PreviewInSolutionExplorer": false
 }

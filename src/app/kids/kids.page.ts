@@ -16,7 +16,8 @@ export class KidsPage implements OnInit {
     ngOnInit() {
         this.kidService.kidSubject.subscribe(kids => {
             this.kids = kids;
-        })
+        });
+        this.kidService.getAll();
     }
     navigateToDailyReport(kid: Kid) {
         this.navCtrl.navigateForward(['daily-report', kid.id]);

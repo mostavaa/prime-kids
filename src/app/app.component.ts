@@ -53,7 +53,6 @@ export class AppComponent implements OnInit {
         setTimeout(() => this.loadingService.hideLoading(), 5000);
     }
     isLogged() {
-
         let logged = this.authService.isLogged()
         return logged;
     }
