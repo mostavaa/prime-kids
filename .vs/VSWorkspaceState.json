@@ -3,9 +3,11 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\assets",
-    "\\src\\theme"
+    "\\src\\app\\daily-report",
+    "\\src\\app\\kids",
+    "\\src\\app\\models",
+    "\\src\\app\\services"
   ],
-  "SelectedNode": "\\src\\app\\app.component.ts",
+  "SelectedNode": "\\src\\app\\shared.module.ts",
   "PreviewInSolutionExplorer": false
 }

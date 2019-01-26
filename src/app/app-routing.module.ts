@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'daily-report', loadChildren: './daily-report/daily-report.module#DailyReportPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'contact-us', loadChildren: './contact-us/contact-us.module#ContactUsPageModule' },
+  { path: 'settings', loadChildren: './settings/settings.module#SettingsPageModule' },
 ];
 
 @NgModule({

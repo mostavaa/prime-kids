@@ -1,6 +1,8 @@
-<ion-header>
+﻿<ion-header>
     <ion-toolbar>
-        <ion-title color="primary">Login</ion-title>
+        <ion-title color="primary">
+            <span appTranslator word="login"></span>
+        </ion-title>
         <ion-buttons slot="start">
             <ion-menu-button color="primary" autoHide="false"></ion-menu-button>
         </ion-buttons>
@@ -8,17 +10,23 @@
     </ion-toolbar>
 </ion-header>
 <ion-content padding>
-    <form #f (ngSubmit)="f">
+    <form #f (ngSubmit)="login(f)">
         <ion-list>
             <ion-item>
-                <ion-label float>User Name</ion-label>
-                <ion-input type="text" required name="username" ngModel email></ion-input>
+                <ion-label float>
+                    <span appTranslator word="username"></span>
+                </ion-label>
+                <ion-input type="text" required name="username" ngModel></ion-input>
             </ion-item>
             <ion-item>
-                <ion-label float>Password</ion-label>
+                <ion-label float>
+                    <span appTranslator word="password"></span>
+                </ion-label>
                 <ion-input type="password" required name="password" ngModel></ion-input>
             </ion-item>
-            <ion-button expand="full" [disabled]="!f.valid">Login</ion-button>
+            <ion-button expand="full" [disabled]="!f.valid">
+                <span appTranslator word="login"></span>
+            </ion-button>
 
         </ion-list>
 

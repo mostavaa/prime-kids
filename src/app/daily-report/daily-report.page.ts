@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageService } from '../services/language.service';
 
 @Component({
     selector: 'app-daily-report',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DailyReportPage implements OnInit {
     date: string;
-    constructor() { }
+    cancelText: string;
+    okText: string;
+    constructor(private languageService: LanguageService) { }
 
     ngOnInit() {
+        this.okText =  this.languageService.translate('ok')
+        this.cancelText = this.languageService.translate('cancel');
         let today = (new Date()).toISOString();
         this.date = today;
     }

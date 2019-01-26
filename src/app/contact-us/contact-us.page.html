@@ -1,6 +1,8 @@
-<ion-header>
+﻿<ion-header>
     <ion-toolbar>
-        <ion-title color="primary">Contact Us</ion-title>
+        <ion-title color="primary">
+            <span appTranslator word="contact"></span>
+        </ion-title>
         <ion-buttons slot="start">
             <ion-menu-button color="primary" autoHide="false"></ion-menu-button>
         </ion-buttons>
@@ -9,18 +11,19 @@
 </ion-header>
 <ion-content padding>
     <ion-card padding>
-        <img src="http://primekidz.com/Content/images/about/1.png" />
+        <img src="../../assets/imgs/1.png" />
     </ion-card>
     <h1>
-        About us
+        <span appTranslator word="about"></span>
     </h1>
     <h2>
-        We are a group of professional software developers offer you some new solutions in the field of nurseries.
-
+        <span appTranslator word="aboutUsTxt"></span>
     </h2>
     <h2>
-        In this program we offer many solutions to the problem of follow-up activities of children daily in a simple and simple way, providing the nursery effort and money and provide parents of the Amwar all the details about their children on a daily basis.
-        The program is easy to learn and use and is divided into two parts:
+        <span appTranslator word="aboutUsProgram"></span>
+    </h2>
+    <h2>
+        <span appTranslator word="aboutUsParts"></span>
     </h2>
     <ion-list lines="none">
         <ion-item>
@@ -28,20 +31,28 @@
                 <ion-icon color="secondary" size="large" name="globe" icon-left></ion-icon>
             </ion-avatar>
             <div>
-                <p><strong>Web Site</strong></p>
                 <p>
-                    Used by the nursery to enter data and activities of children.
+                    <strong>
+                        <span appTranslator word="website"></span>
+                    </strong>
+                </p>
+                <p>
+                    <span appTranslator word="websiteUsage"></span>
                 </p>
             </div>
         </ion-item>
         <ion-item>
             <ion-avatar slot="start">
-                <ion-icon color="secondary"  size="large" name="logo-android"></ion-icon>
+                <ion-icon color="secondary" size="large" name="logo-android"></ion-icon>
             </ion-avatar>
             <div>
-                <p><strong>Mobile Application</strong></p>
                 <p>
-                    Used by parents to follow up his kids.
+                    <strong>
+                        <span appTranslator word="mobileApp"></span>
+                    </strong>
+                </p>
+                <p>
+                    <span appTranslator word="mobileAppUsage"></span>
                 </p>
             </div>
         </ion-item>

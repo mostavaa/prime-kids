@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>MyApp</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+<widget id="com.ionic.primeKids" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Prime-Kids</name>
+    <description>In this program we offer many solutions to the problem of follow-up activities of children daily in a simple and simple way, providing the nursery effort and money and provide parents of the Amwar all the details about their children on a daily basis.
+    </description>
+    <author email="mostavaahamed@gmail.com" href="https://www.facebook.com/mostavaa">Mostavaa</author>
     <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
