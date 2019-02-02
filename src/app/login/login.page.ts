@@ -7,6 +7,7 @@ import { DialogService } from '../services/dialog.service';
 import { LanguageService } from '../services/language.service';
 import { UserService } from '../services/user.service';
 import { NavController } from '@ionic/angular';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
     selector: 'app-login',
@@ -24,12 +25,14 @@ export class LoginPage implements OnInit {
         private dialogService: DialogService,
         private languageService: LanguageService,
         private userService: UserService,
-        private navCtrl: NavController
+        private navCtrl: NavController,
+        private cookieService: CookieService
     ) {
         this.initForm();
     }
 
     ngOnInit() {
+        console.log("cookie user is : " + this.cookieService.check("user"));
         if (this.authService.isLogged())
             this.navCtrl.navigateRoot('kids');
         this.initForm();

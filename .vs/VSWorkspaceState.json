@@ -2,9 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app",
-    "\\src\\app\\daily-report"
+    "\\src\\assets",
+    "\\src\\assets\\css"
   ],
-  "SelectedNode": "\\src\\app\\daily-report\\daily-report.page.html",
+  "SelectedNode": "\\src\\assets",
   "PreviewInSolutionExplorer": false
 }

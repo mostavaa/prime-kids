@@ -19,7 +19,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './services/token.interceptor';
 import { DialogService } from './services/dialog.service';
 import { KidService } from './services/kids.service';
-
+import { CookieService } from 'ngx-cookie-service';
 @NgModule({
     declarations: [AppComponent],
     entryComponents: [],
@@ -32,6 +32,7 @@ import { KidService } from './services/kids.service';
         UserService,
         AuthService,
         HttpService,
+        CookieService,
         DialogService,
         KidService,
         { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
