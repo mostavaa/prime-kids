@@ -1,73 +1,95 @@
-﻿<ion-header>
-    <ion-toolbar>
-        <ion-title color="primary">
-            <span appTranslator word="kids"></span>
-        </ion-title>
-        <ion-buttons slot="start">
-            <ion-menu-button color="primary" autoHide="false"></ion-menu-button>
-        </ion-buttons>
+﻿
 
-    </ion-toolbar>
-</ion-header>
-<ion-content padding>
-    <ion-card padding *ngFor="let kid of kids">
-        <img src="../../assets/imgs/1.png" />
-        <ion-card-content>
-            <ion-card-title color="tertiary">
-                <span appTranslator word="nursary"></span>
-            </ion-card-title>
-            <ion-list lines="none">
-                <ion-item>
-                    <ion-avatar slot="start">
-                        <img src="../../assets/imgs/1.png" />
-                    </ion-avatar>
-                    <ion-label color="primary">
-                        {{kid.name}}
-                    </ion-label>
-                </ion-item>
-                <ion-button (click)="navigateToDailyReport(kid)" color="secondary" expand="full">
-                    <ion-icon name="home" icon-left></ion-icon>
-                    <span appTranslator word="dailyReport"></span>
-                </ion-button>
-                <ion-button color="danger" disabled expand="full">
-                    <ion-icon name="home" icon-left></ion-icon>
-                    <span appTranslator word="notifications"></span>
-                </ion-button>
-                <ion-button color="tertiary" disabled expand="full">
-                    <ion-icon name="home" icon-left></ion-icon>
-                    <span appTranslator word="monthlyReport"></span>
-                </ion-button>
-            </ion-list>
-        </ion-card-content>
-    </ion-card>
-    <ion-card padding>
-        <img src="../../assets/imgs/screen3.png" />
-        <ion-card-content>
-            <ion-card-title color="tertiary">
-                <span appTranslator word="nursary"></span>
-            </ion-card-title>
-            <ion-list lines="none">
-                <ion-item>
-                    <ion-avatar slot="start">
-                        <img src="../../assets/imgs/1.png" />
-                    </ion-avatar>
-                    <ion-label color="primary">
-                        Kid2
-                    </ion-label>
-                </ion-item>
-                <ion-button color="secondary" expand="full">
-                    <ion-icon name="home" icon-left></ion-icon>
-                    <span appTranslator word="dailyReport"></span>
-                </ion-button>
-                <ion-button color="danger" disabled expand="full">
-                    <ion-icon name="home" icon-left></ion-icon>
-                    <span appTranslator word="notifications"></span>
-                </ion-button>
-                <ion-button color="tertiary" disabled expand="full">
-                    <ion-icon name="home" icon-left></ion-icon>
-                    <span appTranslator word="monthlyReport"></span>
-                </ion-button>
-            </ion-list>
-        </ion-card-content>
-    </ion-card>
-</ion-content>
+<div class="page-content">
+    <div class="content-sticky-footer">
+        <div class="row mx-0 mb-3" *ngFor="let kid of kids">
+            <div class="col-12 mb-8">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <figure class="avatar avatar-80 mb-3" title="Malaika Bhavtar"><img src="../../assets/imgs/1.png" alt=""> </figure>
+                        <h6>Kid2</h6>
+                        <p class="text-secondary">
+                            <span appTranslator word="nursary"></span>
+                        </p>
+                        <a (click)="navigateToDailyReport(kid)" class="btn btn-block btn-warning btn-sm rounded">
+                            <span appTranslator word="dailyReport"></span>
+                        </a>
+                        <a class="btn btn-block disabled btn-info btn-sm rounded">
+                            <span appTranslator word="notifications"></span>
+                        </a>
+                        <a class="btn btn-block disabled btn-success btn-sm rounded">
+                            <span appTranslator word="monthlyReport"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mx-0 mb-3">
+            <div class="col-12 mb-8">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <figure class="avatar avatar-80 mb-3" title="Malaika Bhavtar"><img src="../../assets/imgs/1.png" alt=""> </figure>
+                        <h6>Kid2</h6>
+                        <p class="text-secondary">
+                            <span appTranslator word="nursary"></span>
+                        </p>
+                        <a class="btn btn-block btn-warning btn-sm rounded">
+                            <span appTranslator word="dailyReport"></span>
+                        </a>
+                        <a class="btn btn-block disabled btn-info btn-sm rounded">
+                            <span appTranslator word="notifications"></span>
+                        </a>
+                        <a class="btn btn-block disabled btn-success btn-sm rounded">
+                            <span appTranslator word="monthlyReport"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mx-0 mb-3">
+            <div class="col-12 mb-8">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <figure class="avatar avatar-80 mb-3" title="Malaika Bhavtar"><img src="../../assets/imgs/1.png" alt=""> </figure>
+                        <h6>Kid1</h6>
+                        <p class="text-secondary">
+                            <span appTranslator word="nursary"></span>
+                        </p>
+                        <a class="btn btn-block btn-warning btn-sm rounded">
+                            <span appTranslator word="dailyReport"></span>
+                        </a>
+                        <a class="btn btn-block disabled btn-info btn-sm rounded">
+                            <span appTranslator word="notifications"></span>
+                        </a>
+                        <a class="btn btn-block disabled btn-success btn-sm rounded">
+                            <span appTranslator word="monthlyReport"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-wrapper shadow-15">
+        <div class="footer">
+            <div class="row mx-0">
+                <div class="col">
+                    Overux
+                </div>
+                <div class="col-7 text-right">
+                    <a href="#" class="social"><img src="./../../assets/img/facebook.png" alt=""></a>
+                    <a href="#" class="social"><img src="./../../assets/img/googleplus.png" alt=""></a>
+                    <a href="#" class="social"><img src="./../../assets/img/linkedin.png" alt=""></a>
+                    <a href="#" class="social"><img src="./../../assets/img/twitter.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer dark">
+            <div class="row mx-0">
+                <div class="col text-center">
+                    Copyright @2018, Maxartkiller
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

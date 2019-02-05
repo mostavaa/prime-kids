@@ -11,6 +11,9 @@ import { UserService } from '../services/user.service';
 })
 export class SettingsPage implements OnInit {
     form: FormGroup
+    oldPassword: string;
+    newPassword: string;
+    confirmPassword: string;
     constructor(
         private userService: UserService,
         private dialogService: DialogService,
@@ -18,6 +21,9 @@ export class SettingsPage implements OnInit {
     ) { }
 
     ngOnInit() {
+        this.oldPassword = this.languageService.translate('oldPassword');
+        this.newPassword = this.languageService.translate('newPassword');
+        this.confirmPassword = this.languageService.translate('confirmPassword');
         this.initForm();
     }
     initForm() {
@@ -28,6 +34,7 @@ export class SettingsPage implements OnInit {
         })
     }
     changePassowrd() {
+        debugger;
         if (this.form.value.confirmPassword == this.form.value.newPassword) {
             this.userService.changePassword(this.form.value.oldPassword, this.form.value.newPassword).subscribe(res => {
 

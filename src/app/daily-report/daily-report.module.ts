@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { DailyReportPage } from './daily-report.page';
 import { SharedModule } from '../shared.module';
+import { DlDateTimePickerDateModule } from 'angular-bootstrap-datetimepicker';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
   imports: [
       CommonModule,
       ReactiveFormsModule,
+      DlDateTimePickerDateModule,
     IonicModule,
       RouterModule.forChild(routes),
       SharedModule

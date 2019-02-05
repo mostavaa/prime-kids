@@ -3,6 +3,7 @@ export class LanguageService {
 
     resources = {
         ar: {
+            appName: 'Overux',
             kids: 'أولادي',
             logout: 'تسجيل الخروج',
             settings: 'الاعدادات',
@@ -30,6 +31,7 @@ export class LanguageService {
             about: 'من نحن',
             aboutUsTxt: 'مجموعة من المطورين المحترفين في مجال البرمجيات نقدم لكم بعض الحلول الجديدة في مجال الحضانات.',
             aboutUsProgram: 'نقدم في هذا البرنامج العديد من الحلول لمشكلة متابعة انشطة الاطفال اليومية بطريقة سهلة وبسيطة حيث توفر علي الحضانة الجهد والمال وتزود اولياء الاموار بكافة التفاصيل عن اولادهم بشكل يومي.',
+            program:'برنامجنا',
             aboutUsParts: 'البرنامج سهل التعلم والاستخدام وينقسم الي جزئين:',
             website: 'موقع إلكتروني',
             websiteUsage: 'يستخدم من قبل الحضانة لإدخال بيانات وأنشطة الأطفال.',
@@ -41,8 +43,10 @@ export class LanguageService {
             ok: 'موافق',
             cancel: 'الغاء',
             confirmPasswordNotMatch: 'الكلمة السرية غير مطابقة',
+            welcome: 'مرحبا بكم في',
         },
         en: {
+            appName: 'Overux',
             kids: 'Kids',
             logout: 'Logout',
             settings: 'Settings',
@@ -70,6 +74,7 @@ export class LanguageService {
             about: 'About us',
             aboutUsTxt: 'We are a group of professional software developers offer you some new solutions in the field of nurseries.',
             aboutUsProgram: 'In this program we offer many solutions to the problem of follow-up activities of children daily in a simple and simple way, providing the nursery effort and money and provide parents of the Amwar all the details about their children on a daily basis.',
+            program: 'Out Program',
             aboutUsParts: 'The program is easy to learn and use and is divided into two parts:',
             website: 'Web Site',
             websiteUsage: 'Used by the nursery to enter data and activities of children.',
@@ -81,7 +86,8 @@ export class LanguageService {
             ok: 'Ok',
             cancel: 'Cancel',
             confirmPasswordNotMatch: 'Passwords Arn\'t Identical',
-
+            welcome: 'Welcome to',
+            
         }
     };
     switchLanguage(): any {

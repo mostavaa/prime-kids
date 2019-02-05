@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { LoadingService } from './services/loading.service';
 import { LanguageService } from './services/language.service';
 import { AuthService } from './services/auth.service';
+import { Router, NavigationEnd, RoutesRecognized } from '@angular/router';
 
 
 @Component({
@@ -14,6 +15,7 @@ import { AuthService } from './services/auth.service';
 })
 export class AppComponent implements OnInit {
     isEnglish: boolean;
+    isLoginPage: boolean = false;
     constructor(
         private platform: Platform,
         private splashScreen: SplashScreen,
@@ -22,11 +24,19 @@ export class AppComponent implements OnInit {
         private menueCtrl: MenuController,
         private loadingService: LoadingService,
         private languageService: LanguageService,
-        private authService: AuthService
+        private authService: AuthService,
+        private router: Router
     ) {
         this.initializeApp();
+     
     }
     ngOnInit() {
+        this.isLoginPage = false;
+        this.router.events.subscribe(val => {
+            if (val instanceof RoutesRecognized) {
+                this.isLoginPage = val.state.root.firstChild.routeConfig.path == 'login';
+            }
+        });
         this.isEnglish = this.languageService.isEnglish();
     }
     initializeApp() {

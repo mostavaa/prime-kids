@@ -12,7 +12,7 @@ import { Activities } from '../models/activities.model';
     styleUrls: ['./daily-report.page.scss'],
 })
 export class DailyReportPage implements OnInit {
-    date: string;
+    //date : any ;
     cancelText: string;
     okText: string;
     kids: Kid[];
@@ -24,11 +24,11 @@ export class DailyReportPage implements OnInit {
         this.initForm();
     }
     initForm() {
-        let today = (new Date()).toISOString();
-        this.date = today;
+        let today = (new Date());
+
         this.form = new FormGroup({
             'kid': new FormControl(null ),
-            'date': new FormControl(this.date),
+            'date': new FormControl(today),
         })
     }
     ngOnInit() {
@@ -51,8 +51,9 @@ export class DailyReportPage implements OnInit {
         this.cancelText = this.languageService.translate('cancel');
     
     }
-    searchActivities() {
+    searchActivities(f?:any) {
         console.log(this.form);
+        console.log(f);
         debugger;
         this.kidService.getKidActivity(this.form.value.kid, this.form.value.date).subscribe(res => {
             this.activites = res;

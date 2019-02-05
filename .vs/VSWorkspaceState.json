@@ -2,9 +2,13 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\app",
+    "\\src\\app\\daily-report",
+    "\\src\\app\\kids",
     "\\src\\assets",
-    "\\src\\assets\\css"
+    "\\src\\assets\\css",
+    "\\src\\theme"
   ],
-  "SelectedNode": "\\src\\assets",
+  "SelectedNode": "\\src\\app\\daily-report\\daily-report.module.ts",
   "PreviewInSolutionExplorer": false
 }

@@ -43,6 +43,7 @@
 
 
 /* base layout css */
+@import '~open-iconic/font/css/open-iconic-bootstrap.css';
 
 html,
 body {
@@ -101,7 +102,7 @@ header.fixed-header~.page-content {
     display: inline-block;
     clear: both;
     width: 100%;
-    padding-top: 25px;
+    padding-top: 65px;
 }
 h1,
 h2,

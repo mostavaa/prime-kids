@@ -15,6 +15,8 @@ import { CookieService } from 'ngx-cookie-service';
     styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+    username: string;
+    password: string;
     form: FormGroup = new FormGroup({
         'username': new FormControl(null, Validators.required),
         'password': new FormControl(null, Validators.required),
@@ -28,6 +30,8 @@ export class LoginPage implements OnInit {
         private navCtrl: NavController,
         private cookieService: CookieService
     ) {
+        this.username = this.languageService.translate('username');
+        this.password = this.languageService.translate('password');
         this.initForm();
     }
 
@@ -45,13 +49,16 @@ export class LoginPage implements OnInit {
     }
     login() {
         this.loaderService.showLoading();
-        let tokenTest = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVuZy5tb2hhbWVkaGFzc2FuLjg2QGdtYWlsLmNvbSIsInJvbGUiOiJQYXJlbnQiLCJuYmYiOjE1NDg1MzI5MzksImV4cCI6MTU0ODUzNjUzOSwiaWF0IjoxNTQ4NTMyOTM5fQ.FgwLkSo7BnFIBgzWM8wRaxvKuWrFE_upFiYlzQgVGAQ';
-        this.successLogin(tokenTest);
-        return;
+        //let tokenTest = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6ImVuZy5tb2hhbWVkaGFzc2FuLjg2QGdtYWlsLmNvbSIsInJvbGUiOiJQYXJlbnQiLCJuYmYiOjE1NDg1MzI5MzksImV4cCI6MTU0ODUzNjUzOSwiaWF0IjoxNTQ4NTMyOTM5fQ.FgwLkSo7BnFIBgzWM8wRaxvKuWrFE_upFiYlzQgVGAQ';
+        //this.successLogin(tokenTest);
+        //return;
+
         this.authService.login(new User(this.form.value.username, this.form.value.password, '', ''))
             .subscribe(token => {
+                debugger;
                 this.successLogin(token)
             }, error => {
+                debugger;
                 this.loaderService.hideLoading();
                 this.dialogService.showErrorAlert(this.languageService.translate('error'))
             });

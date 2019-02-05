@@ -1,108 +1,143 @@
-﻿<ion-header>
-    <ion-toolbar>
-        <ion-title color="primary">
-            <span appTranslator word="dailyKidsActivity"></span>
-        </ion-title>
-        <ion-buttons slot="start">
-            <ion-menu-button color="primary" autoHide="false"></ion-menu-button>
-        </ion-buttons>
-
-    </ion-toolbar>
-</ion-header>
-<ion-content padding>
-    <ion-list>
-        <ion-item text-center>
-            <ion-label>
-                <p>
+﻿<div class="page-content">
+    <div class="content-sticky-footer">
+        <div class="row mx-0 mb-3 mt-3">
+            <div class="col-12 mb-8">
+                <h6 class="text-center mb-3">
                     <span appTranslator word="changeDateKid"></span>
-                </p>
-            </ion-label>
+                </h6>
+                <form [formGroup]="form">
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">
+                            <span appTranslator word="dayOfActivity"></span>
+                        </label>
+                        <!--<input formControlName="date" type="date" (change)="searchActivities()" class="form-control" id="textinput">-->
+                        <dl-date-time-picker formControlName="date" #f maxView="year" minView="day" (change)="searchActivities(f)"></dl-date-time-picker>
 
-        </ion-item>
-        <form [formGroup]="form">
-        <ion-item>
-            <ion-icon color="secondary" name="calendar"></ion-icon>
-            <ion-label color="primary">
-                <span appTranslator word="dayOfActivity"></span>
-            </ion-label>
-            <ion-datetime formControlName="date" (ionChange)="searchActivities()"  [cancelText]="cancelText" [doneText]="okText" display-format="DD/MM/YYYY"></ion-datetime>
-        </ion-item>
-        <ion-item>
-            <ion-icon color="secondary" name="person"></ion-icon>
-            <ion-label color="primary">
-                <span appTranslator word="kidName"></span>
-            </ion-label>
-            <ion-select formControlName="kid" (ionChange)="searchActivities()" interface="action-sheet" [okText]="okText" [cancelText]="cancelText">
-                <ion-select-option value="kid1">kid1</ion-select-option>
-                <ion-select-option [value]="kid.id" [selected]="kid.id == selectedId" *ngFor="let kid of kids">{{kid.name}}</ion-select-option>
-            </ion-select>
-        </ion-item>
-        </form>
-    </ion-list>
-    <ion-card>
-        <ion-card-header>
-            <!--<ion-icon color="primary" name="calendar"></ion-icon>
-            <ion-label color="primary">{{date}}</ion-label>
-            <ion-icon name="person" color="secondary"></ion-icon>
-            <ion-label color="secondary">Kid1</ion-label>-->
-            <ion-label color="tertiary">Health care activities</ion-label>
-        </ion-card-header>
-        <ion-list lines="none">
-            <ion-item>
-                <ion-avatar slot="start">
-                    <img src="../../assets/imgs/diaper.jpg" />
-                </ion-avatar>
-                <ion-label>
-                    <h3>only one item selected</h3>
-                    <p>
-                        <ion-button>1</ion-button>
-                        <ion-button color="light">2</ion-button>
-                        <ion-button color="light">3</ion-button>
-                        <ion-button color="light">4</ion-button>
-                    </p>
-                </ion-label>
-            </ion-item>
-            <ion-item>
-                <ion-avatar slot="start">
-                    <img src="../../assets/imgs/temperature.png" />
-                </ion-avatar>
-                <ion-label>
-                    <h3>all the items selected</h3>
-                    <p>
-                        <ion-button>1</ion-button>
-                        <ion-button>2</ion-button>
-                        <ion-button>3</ion-button>
-                    </p>
-                </ion-label>
-            </ion-item>
-        </ion-list>
-    </ion-card>
-    <ion-card>
-        <ion-card-header>
-            <ion-label color="tertiary">
-                <span appTranslator word="absent"></span>
-            </ion-label>
-        </ion-card-header>
-        <ion-list lines="none">
-            <ion-item text-center>
-                <h2 color="primary">
-                    <span appTranslator word="childAbsent"></span>
-                </h2>
-            </ion-item>
-            <ion-item text-center>
-                <h2 color="primary">
-                    <span appTranslator word="wishesHealth"></span>
-                </h2>
-            </ion-item>
-        </ion-list>
-    </ion-card>
-    <ion-card>
-        <ion-list lines="none">
-            <ion-item text-center>
-                <h1 color="primary">
-                    <span appTranslator word="noActivities"></span>
-                </h1>
-            </ion-item>
-        </ion-list>
-    </ion-card>
-</ion-content>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">
+                            <span appTranslator word="kidName"></span>
+                        </label>
+                        <select formControlName="kid" class="form-control" (change)="searchActivities()" id="exampleFormControlSelect1">
+                            <option value="kid1">kid1</option>
+                            <option [value]="kid.id" [selected]="kid.id == selectedId" *ngFor="let kid of kids">{{kid.name}}</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row mx-0 mb-3 mt-3">
+            <div class="col-12 mb-8">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col">
+                                <h5 class="card-title">Health care activities</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <a class="media m-3">
+                            <div class="w-auto h-100">
+                                <figure class="avatar avatar-70"><img src="./../../assets/img/user2.png" alt=""> </figure>
+                            </div>
+
+                            <div class="media-body">
+                                <h5 class="mb-0">only one item selected</h5>
+
+                                <div class="btn-group btn-group-sm btn-toolbar mt-2 mr-2 mb-2" role="group" aria-label="Second group">
+                                    <a class="mt-1 btn  ">5</a>
+                                    <a class="mt-1 btn btn-warning active">6</a>
+                                    <a class="mt-1 btn btn- ">7</a>
+                                    <a class="mt-1 btn  ">7</a>
+                                    <a class="mt-1 btn  ">7</a>
+                                    <a class="mt-1 btn  ">7</a>
+                                    <a class="mt-1 btn  ">7</a>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="media m-3">
+                            <div class="w-auto h-100">
+                                <figure class="avatar avatar-70"><img src="./../../assets/img/user2.png" alt=""> </figure>
+                            </div>
+
+                            <div class="media-body">
+                                <h5 class="mb-0">only one item selected</h5>
+
+                                <div class="btn-group btn-group-sm btn-toolbar mt-2 mr-2 mb-2" role="group" aria-label="Second group">
+                                    <a class="mt-1 btn  ">5</a>
+                                    <a class="mt-1 btn btn-warning active">6</a>
+                                    <a class="mt-1 btn  ">7</a>
+                                    <a class="mt-1 btn  ">7</a>
+                                    <a class="mt-1 btn  ">7</a>
+                                    <a class="mt-1 btn  ">7</a>
+                                    <a class="mt-1 btn  ">7</a>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="media m-3">
+                            <div class="w-auto h-100">
+                                <figure class="avatar avatar-70"><img src="./../../assets/img/user2.png" alt=""> </figure>
+                            </div>
+
+                            <div class="media-body">
+                                <h5 class="mb-0">All Items selected</h5>
+
+                                <div class="btn-group btn-group-sm btn-toolbar mt-2 mr-2 mb-2" role="group" aria-label="Second group">
+                                    <a class="mt-1 btn btn-warning active">5</a>
+                                    <a class="mt-1 btn btn-warning active">6</a>
+                                    <a class="mt-1 btn btn-warning active">7</a>
+                                    <a class="mt-1 btn btn-warning active">7</a>
+                                    <a class="mt-1 btn btn-warning active">7</a>
+                                    <a class="mt-1 btn btn-warning active">7</a>
+                                    <a class="mt-1 btn btn-warning active">7</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row mx-0 mb-3 mt-3 ">
+            <div class="col-12 mb-8">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col">
+                                <h5 class="card-title"><span appTranslator word="absent"></span></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body text-center">
+                        <figure class="avatar avatar-80 mb-3" title="Malaika Bhavtar"><img src="../../assets/imgs/1.png" alt=""> </figure>
+
+                        <h6 class="">
+                            <span appTranslator word="childAbsent"></span>
+                        </h6>
+                        <p>
+                            <span appTranslator word="wishesHealth"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mx-0 mb-3 mt-3 ">
+            <div class="col-12 mb-8">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <figure class="avatar avatar-80 mb-3" title="Malaika Bhavtar"><img src="../../assets/imgs/1.png" alt=""> </figure>
+
+                        <h6 class="">
+                            <span appTranslator word="noActivities"></span>
+                        </h6>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
